@@ -1,7 +1,7 @@
 // The PS/2 GPIO and mouse drivers.
 / {
     gpio_ps2: gpio_ps2 {
-		status = "okay";
+	status = "okay";
         compatible = "gpio-ps2";
         label = "gpio_ps2";
         scl-gpios = <&xiao_d 10 0>;
@@ -11,7 +11,7 @@
 
 / {
     mouse_ps2: mouse_ps2 {
-		status = "okay";
+	status = "okay";
         compatible = "zmk,ps2-mouse";
         label = "ps2_mouse";
         ps2-device = <&gpio_ps2>;
