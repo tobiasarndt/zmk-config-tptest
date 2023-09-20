@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ {
+	chosen {
+		zmk,kscan = &kscan0;
+	};
+
+	kscan0: kscan {
+		compatible = "zmk,kscan-gpio-direct";
+
+		label = "KSCAN";
+
+		input-gpios
+			// Blackpill onboard user key button on pin 10
+			= <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+
+			// Switches connected directly to gpio pins
+			, <&xiao_d 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			;
+
+	};
+
+};
+&gpiote {
+	interrupts = < 0x6 0 >;
+};
