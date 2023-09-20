@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
+#include "tptest.dtsi"
 / {
 	chosen {
 		zmk,kscan = &kscan0;
